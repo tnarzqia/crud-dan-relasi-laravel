@@ -18,9 +18,6 @@ class CreateListExtrasTable extends Migration
             $table->bigInteger('siswa_id');
             $table->bigInteger('extra_id');
             $table->timestamps();
-
-            $table->foreign('siswa_id')->references('id')->on('murids')->onDelete('cascade');
-            $table->foreign('extra_id')->references('id')->on('ektras')->onDelete('cascade');
         });
     }
 

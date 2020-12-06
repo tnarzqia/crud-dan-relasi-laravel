@@ -89,18 +89,28 @@ class MuridController extends Controller
      * @param  \App\murid  $murid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, murid $siswa_id)
+    public function update(Request $request, $siswa_id)
     {
         //
-        $update = Murid::findOrFail($siswa_id);
-        $kelas = Clas::all();
-        $update->nama_siswa = $request->get('nama_siswa');
-        $update->no = $request->get('no');
-        $update->nis = $request->get('nis');
-        $update->kelas_id = $request->get('kelas_id');
-        $update->save();
+        // $update = Murid::findOrFail($siswa_id);
+        // $kelas = Clas::all();
+        // $update->nama_siswa = $request->get('nama_siswa');
+        // $update->no = $request->get('no');
+        // $update->nis = $request->get('nis');
+        // $update->kelas_id = $request->get('kelas_id');
+        // $update->save();
+        // $kelas->save();
 
-        return redirect()->route('siswa.index', compact('kelas'));
+        // return redirect()->route('siswa.index', compact('kelas'));
+        $murid = new \App\Murid;
+        $update = Clas::all();
+        $murid->nama_siswa = $request->get('nama_siswa');
+        $murid->no = $request->get('no');
+        $murid->nis = $request->get('nis');
+        $murid->kelas_id = $request->get('kelas_id');
+        $murid->save();
+
+        return redirect()->route('siswa.index');
     }
 
     /**
