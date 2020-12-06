@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Ekstra;
+use App\Ektra;
 use Illuminate\Http\Request;
 
-class EkstraController extends Controller
+class EktraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class EkstraController extends Controller
     public function index()
     {
         //
-        $data = Ekstra::all();
-        return view('pages/extra/index')->with([
+        $data = Ektra::all();
+
+        return view('pages/extras/index')->with([
             'data' => $data,
         ]);
     }
@@ -29,7 +30,7 @@ class EkstraController extends Controller
     public function create()
     {
         //
-        return view('pages/extra/create-extra');
+        return view('pages/extras/create-extra');
     }
 
     /**
@@ -41,9 +42,9 @@ class EkstraController extends Controller
     public function store(Request $request)
     {
         //
-        $extra = new \App\Ekstra;
-        $extra->nama = $request->get('nama');
-        $extra->save();
+        $simpan = new \App\Ektra;
+        $simpan->nama = $request->get('nama');
+        $simpan->save();
 
         return redirect()->route('extra.index');
     }
@@ -51,10 +52,10 @@ class EkstraController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Ekstra  $ekstra
+     * @param  \App\Ektra  $ektra
      * @return \Illuminate\Http\Response
      */
-    public function show(Ekstra $ekstra)
+    public function show(Ektra $ektra)
     {
         //
     }
@@ -62,10 +63,10 @@ class EkstraController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Ekstra  $ekstra
+     * @param  \App\Ektra  $ektra
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ekstra $ekstra)
+    public function edit(Ektra $ektra)
     {
         //
     }
@@ -74,10 +75,10 @@ class EkstraController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Ekstra  $ekstra
+     * @param  \App\Ektra  $ektra
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ekstra $ekstra)
+    public function update(Request $request, Ektra $ektra)
     {
         //
     }
@@ -85,13 +86,13 @@ class EkstraController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Ekstra  $ekstra
+     * @param  \App\Ektra  $ektra
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($extra_id)
     {
         //
-        $delete = Ekstra::findOrFail($id);
+        $delete = Ektra::findOrFail($extra_id);
         $delete->delete();
 
         return redirect()->route('extra.index');

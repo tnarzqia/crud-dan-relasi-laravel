@@ -31,7 +31,7 @@
                                         {{-- <button class="btn btn-warning in-line">Update</button> --}}
                                         <a href="" class="btn btn-warning">Edit</a>
 
-                                        <form action="" method="post">
+                                        <form action="{{ route('extra.destroy', [$d->extra_id]) }}" method="post">
                                             @csrf
                                             {{-- manipulasi method delete yang dikirim --}}
                                             <input type="hidden" name="_method" value="Delete">
