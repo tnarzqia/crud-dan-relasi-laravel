@@ -17,7 +17,8 @@ class MuridController extends Controller
     {
         //
         $data = Murid::all();
-        return view('pages/siswa/index')->with([
+        $data1 = Clas::all();
+        return view('pages/siswa/index', compact('data1'))->with([
             'data' => $data,
         ]);
     }
@@ -71,10 +72,10 @@ class MuridController extends Controller
      * @param  \App\murid  $murid
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($siswa_id)
     {
         //
-        $data = murid::findOrFail($id);
+        $data = murid::findOrFail($siswa_id);
         $kelas = Clas::all();
         return view('pages/siswa/edit-siswa', compact('kelas'))->with([
             'data' => $data,
@@ -88,10 +89,10 @@ class MuridController extends Controller
      * @param  \App\murid  $murid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, murid $id)
+    public function update(Request $request, murid $siswa_id)
     {
         //
-        $update = Murid::findOrFail($id);
+        $update = Murid::findOrFail($siswa_id);
         $kelas = Clas::all();
         $update->nama_siswa = $request->get('nama_siswa');
         $update->no = $request->get('no');

@@ -10,7 +10,7 @@
             <h1 class="h3 mb-0 text-gray-800 mb-4">Form Tambah Siswa</h1>
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('siswa.update', [$data->id]) }}" method="POST">
+                    <form action="{{ route('siswa.update', [$data->siswa_id]) }}" method="POST">
                         @csrf
                         <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
