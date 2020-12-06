@@ -29,7 +29,7 @@
                                     <td>{{$d->nama}}</td>
                                     <td>
                                         {{-- <button class="btn btn-warning in-line">Update</button> --}}
-                                        <a href="" class="btn btn-warning">Edit</a>
+                                        <a href="{{ route('extra.edit', [$d->extra_id]) }}" class="btn btn-warning">Edit</a>
 
                                         <form action="{{ route('extra.destroy', [$d->extra_id]) }}" method="post">
                                             @csrf

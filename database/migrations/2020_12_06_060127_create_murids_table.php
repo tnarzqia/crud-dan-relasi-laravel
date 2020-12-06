@@ -19,6 +19,7 @@ class CreateMuridsTable extends Migration
             $table->string('nama_siswa');
             $table->bigInteger('no');
             $table->bigInteger('nis');
+            $table->$table->timestamps();
 
             $table->foreign('kelas_id')->references('id')->on('clas')->onDelete('cascade');
         });

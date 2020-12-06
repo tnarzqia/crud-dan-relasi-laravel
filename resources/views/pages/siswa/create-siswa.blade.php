@@ -34,7 +34,7 @@
                             <input type="text" class="form-control" id="nis" placeholder="Nama Induk siswa" name="nis">
                         </div>
                         <button class="btn btn-primary">Submit</button>
-                      </form>
+                    </form>
                 </div>
               </div>
         </div>

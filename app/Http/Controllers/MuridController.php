@@ -44,7 +44,7 @@ class MuridController extends Controller
     {
         //
         $murid = new \App\Murid;
-        $murid->nama = $request->get('nama_siswa');
+        $murid->nama_siswa = $request->get('nama_siswa');
         $murid->no = $request->get('no');
         $murid->nis = $request->get('nis');
         $murid->kelas_id = $request->get('kelas_id');

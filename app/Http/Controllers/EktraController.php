@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ektra;
 use Illuminate\Http\Request;
+use DB;
 
 class EktraController extends Controller
 {
@@ -66,9 +67,14 @@ class EktraController extends Controller
      * @param  \App\Ektra  $ektra
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ektra $ektra)
+    public function edit($extra_id)
     {
         //
+        $data = Ektra::findOrFail($extra_id);
+
+        return view('pages/extras/edit-extra')->with([
+            'data' => $data,
+        ]);
     }
 
     /**
