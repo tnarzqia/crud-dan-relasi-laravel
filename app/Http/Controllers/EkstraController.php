@@ -15,6 +15,10 @@ class EkstraController extends Controller
     public function index()
     {
         //
+        $data = Ekstra::all();
+        return view('pages/extra/index')->with([
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -25,6 +29,7 @@ class EkstraController extends Controller
     public function create()
     {
         //
+        return view('pages/extra/create-extra');
     }
 
     /**
@@ -36,6 +41,11 @@ class EkstraController extends Controller
     public function store(Request $request)
     {
         //
+        $extra = new \App\Ekstra;
+        $extra->nama = $request->get('nama');
+        $extra->save();
+
+        return redirect()->route('extra.index');
     }
 
     /**
@@ -78,8 +88,12 @@ class EkstraController extends Controller
      * @param  \App\Ekstra  $ekstra
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ekstra $ekstra)
+    public function destroy($id)
     {
         //
+        $delete = Ekstra::findOrFail($id);
+        $delete->delete();
+
+        return redirect()->route('extra.index');
     }
 }

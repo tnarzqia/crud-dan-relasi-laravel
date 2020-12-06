@@ -13,4 +13,9 @@ class Murid extends Model
     {
         return $this->belongsTo(Clas::class, 'kelas_id', 'id');
     }
+
+    public function ekstra()
+    {
+        return $this->belongsToMany('App\Models\Ekstra');
+    }
 }

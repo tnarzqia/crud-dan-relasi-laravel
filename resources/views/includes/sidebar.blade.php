@@ -37,6 +37,16 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Siswa</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('extra.index') }}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Extra</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>List Extra Siswa</span></a>
+    </li>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"

@@ -21,3 +21,4 @@ Route::resource('category', 'CategoryController');
 Route::resource('post', 'PostController');
 Route::resource('clas', 'ClasController');
 Route::resource('siswa', 'MuridController');
+Route::resource('extra', 'EkstraController');
