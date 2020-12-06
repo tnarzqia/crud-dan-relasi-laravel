@@ -15,7 +15,7 @@
                         <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
                           <label for="kelas">Nama</label>
-                          <input type="text" class="form-control" id="kelas" placeholder="Nama" name="nama">
+                          <input type="text" class="form-control" id="kelas" placeholder="Nama" name="nama" value="{{$data->nama}}">
                         </div>
 
                         <button class="btn btn-primary">Submit</button>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ektra extends Model
 {
     //
-    protected $primarykey = 'extra_id';
+    protected $primaryKey = 'extra_id';
 
     public function murid()
     {

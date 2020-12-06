@@ -35,9 +35,9 @@
                                     <td>{{$d->clas->nama}}</td>
                                     <td>
                                         {{-- <button class="btn btn-warning in-line">Update</button> --}}
-                                        <a href="#" class="btn btn-warning">Edit</a>
+                                        <a href="{{ route('siswa.edit', [$d->id]) }}" class="btn btn-warning">Edit</a>
 
-                                        <form action="#" method="post">
+                                        <form action="{{ route('siswa.destroy', [$d->id]) }}" method="post">
                                             @csrf
                                             {{-- manipulasi method delete yang dikirim --}}
                                             <input type="hidden" name="_method" value="Delete">

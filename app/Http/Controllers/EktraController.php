@@ -84,9 +84,14 @@ class EktraController extends Controller
      * @param  \App\Ektra  $ektra
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ektra $ektra)
+    public function update(Request $request, $extra_id)
     {
         //
+        $update = Ektra::findOrFail($extra_id);
+        $update->nama = $request->get('nama');
+        $update->save();
+
+        return redirect()->route('extra.index');
     }
 
     /**

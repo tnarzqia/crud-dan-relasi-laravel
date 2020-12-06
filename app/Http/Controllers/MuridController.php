@@ -71,9 +71,14 @@ class MuridController extends Controller
      * @param  \App\murid  $murid
      * @return \Illuminate\Http\Response
      */
-    public function edit(murid $murid)
+    public function edit($id)
     {
         //
+        $data = murid::findOrFail($id);
+        $kelas = Clas::all();
+        return view('pages/siswa/edit-siswa', compact('kelas'))->with([
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -83,9 +88,18 @@ class MuridController extends Controller
      * @param  \App\murid  $murid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, murid $murid)
+    public function update(Request $request, murid $id)
     {
         //
+        $update = Murid::findOrFail($id);
+        $kelas = Clas::all();
+        $update->nama_siswa = $request->get('nama_siswa');
+        $update->no = $request->get('no');
+        $update->nis = $request->get('nis');
+        $update->kelas_id = $request->get('kelas_id');
+        $update->save();
+
+        return redirect()->route('siswa.index', compact('kelas'));
     }
 
     /**
@@ -94,8 +108,12 @@ class MuridController extends Controller
      * @param  \App\murid  $murid
      * @return \Illuminate\Http\Response
      */
-    public function destroy(murid $murid)
+    public function destroy($id)
     {
         //
+        $delete = Murid::findOrFail($id);
+        $delete->delete();
+
+        return redirect()->route('siswa.index');
     }
 }
